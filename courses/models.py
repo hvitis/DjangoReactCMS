@@ -22,19 +22,25 @@ class Subject(models.Model):
 
 
 class Course(models.Model):
+    
     # Instructor that created the course
     owner = models.ForeignKey(User,
                               related_name='courses_created',
                               on_delete=models.CASCADE)
+
     # Subject that this course is about
     subject = models.ForeignKey(Subject,
                                 related_name='courses',
                                 on_delete=models.CASCADE)
-
     title = models.CharField(max_length=200)
+
     # Slug will be used in URL later
     slug = models.SlugField(max_length=200, unique=True)
+
+    # Overview of the course
     overview = models.TextField()
+
+    #Setting a field that adds date and time automatically on create
     created = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ['-created']
