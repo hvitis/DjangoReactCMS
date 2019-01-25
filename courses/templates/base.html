@@ -1,0 +1,192 @@
+  {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <title>{% block title %}courses{% endblock %}</title>
+  {% comment %} <link href="{% static "css/base.css" %}" rel="stylesheet"> {% endcomment %}
+</head>
+<body>
+{% comment %} <BODY BACKGROUND="https://images.unsplash.com/photo-1505658752126-8996bbb1d5fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" BGCOLOR="#000000" BGPROPERTIES="FIXED"> {% endcomment %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://www.brookes.ac.uk/uploadedImages/Main_Site/Fixed_pages/About_Brookes/NewsImport/study-higher-logo.jpg" width="112" height="28">
+    </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Strona główna
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Metody
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Tradycyjna
+          </a>
+          <a class="navbar-item">
+            Własna
+          </a>
+          <a class="navbar-item">
+            Celowana
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Twoja
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Kursy
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Do samodzielnej nauki
+          </a>
+          <a class="navbar-item">
+            Na Kartę Polaka
+          </a>
+          <a class="navbar-item">
+            Język prawny
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Na życzenie
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          O nas
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Nauczyciele
+          </a>
+          <a class="navbar-item">
+            Współpraca
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        {% if request.user.is_authenticated %}
+        <a class="button is-primary" href="{% url "logout" %}"><strong>Wyloguj</strong></a>
+      {% else %}
+        <a class="button is-primary" href="{% url "login" %}"><strong>Zaloguj</strong></a>
+        <a class="button is-primary">
+            <strong>Zarejestruj</strong>
+          </a>
+      {% endif %} 
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container is-wide">
+  <div id="content">
+  <div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child notification has-background-link has-text-white">
+          <p class="title">Log in</p>
+          <p class="subtitle">
+            {% block content %}
+            {% endblock %} 
+          </p>
+        </article>
+        <article class="tile is-child notification has-background-info has-text-white">
+          <p class="title">...tiles</p>
+          <p class="subtitle">Bottom tile</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification has-background-info has-text-white">
+          <p class="title">Middle tile</p>
+          <p class="subtitle">With an image</p>
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/640x480.png">
+          </figure>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-light has-text-grey-dark">
+        <p class="title">Wide tile</p>
+        <p class="subtitle">Aligned with the right tile</p>
+        <div class="content">
+          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum  
+        </div>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification has-background-light has-text-grey-dark">
+        <p class="title">Wide tile</p>
+        <p class="subtitle">Aligned with the right tile</p>
+        <div class="content">
+          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum  
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child notification has-background-link has-text-white">
+      <div class="content">
+        <p class="title">Tall tile</p>
+        <p class="subtitle">With even more content</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </div>
+    </article>
+  </div>
+</div>   
+  </div>
+  </div>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" ></link>
+  <script>
+    $(document).ready(function() {
+      {% block domready %}
+      {% endblock %}
+    });
+  </script>
+  <script type="text/javascript">
+var number = 0;
+window.setInterval(slider, 8000);
+function slider() {
+  if (number <= 4) {
+    number += 1;
+    $(document).ready(function() {
+      $("body").css(
+        "background-image",
+        "url(../../static/images/picture_poland_0" + number + ".jpg)"
+      );
+    });
+  } else {
+    pass;
+  }
+}
+
+slider();
+</script>
+</body>
+</html>
+

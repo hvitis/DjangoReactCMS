@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,400);
+
+ul.content-types li {
+  list-style: none;
+  float: left;
+  margin: 10px;
+  background: #efefef;
+  padding: 8px 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+form p {
+  overflow: auto;
+}
+
+.errorlist {
+  color: #ae2c2c;
+  margin: 0;
+}
+
+label {
+  float: left;
+  clear: both;
+  margin: 0 0 8px;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  float: left;
+  clear: both;
+  width: 300px;
+}
+
+textarea {
+  height: 80px;
+}
+
+select {
+  width: 324px;
+}
+
+a.button,
+input[type=submit] {
+  border-radius: 5px;
+  background: #4dcc43;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+a.secondary-button {
+  border: 3px solid #4dcc43;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+a.button:hover,
+input[type=submit]:hover {
+  background: #3fad37;
+}
